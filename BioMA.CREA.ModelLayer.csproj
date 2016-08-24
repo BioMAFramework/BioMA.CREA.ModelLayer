@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{933737BA-5129-4137-B7B8-67EEFADF666D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BioMA.CREA.ModelLayer</RootNamespace>
+    <AssemblyName>BioMA.CREA.ModelLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\BioMA.CREA.ModelLayer.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\AtLeastOneDifferentFromZeroCondition.cs" />
+    <Compile Include="Core\CloneHelper.cs" />
+    <Compile Include="Core\ConditionsCollection.cs" />
+    <Compile Include="Core\GreaterThanCondition.cs" />
+    <Compile Include="Core\ICondition.cs" />
+    <Compile Include="Core\IDataProvider.cs" />
+    <Compile Include="Core\IDomainClass.cs" />
+    <Compile Include="Core\IManagementBase.cs" />
+    <Compile Include="Core\IPreconditionsData.cs" />
+    <Compile Include="Core\ITestsOutput.cs" />
+    <Compile Include="Core\IVarInfo.cs" />
+    <Compile Include="Core\IVarInfoClass.cs" />
+    <Compile Include="Core\IVarInfoConverter.cs" />
+    <Compile Include="Core\ManagementCollection.cs" />
+    <Compile Include="Core\NotZeroIfSecondNotZeroCondition.cs" />
+    <Compile Include="Core\Preconditions.cs" />
+    <Compile Include="Core\PreconditionsData.cs" />
+    <Compile Include="Core\RangeBasedCondition.cs" />
+    <Compile Include="Core\RangeOneRangeTwoCondition.cs" />
+    <Compile Include="Core\TestPreconditions.cs" />
+    <Compile Include="Core\TestsOutputContext.cs" />
+    <Compile Include="Core\TestsOutputDefault.cs" />
+    <Compile Include="Core\TestsOutputToListener.cs" />
+    <Compile Include="Core\TestsOutputXML.cs" />
+    <Compile Include="MLLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MLLicense.designer.cs">
+      <DependentUpon>MLLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametersManagement\DataTypeFactory.cs" />
+    <Compile Include="ParametersManagement\IParameterEditor.cs" />
+    <Compile Include="ParametersManagement\IParameters.cs" />
+    <Compile Include="ParametersManagement\IParametersSet.cs" />
+    <Compile Include="ParametersManagement\IValuesReader.cs" />
+    <Compile Include="ParametersManagement\IValuesWriter.cs" />
+    <Compile Include="ParametersManagement\ParametersIO.cs" />
+    <Compile Include="ParametersManagement\XmlRW.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TraceHelper.cs" />
+    <Compile Include="Core\VarInfo.cs" />
+    <Compile Include="Core\VarInfoEnumerableExtensionMethods.cs" />
+    <Compile Include="Core\VarInfoValueTypes.cs" />
+    <Compile Include="MetaDataTypes\IAnnotatable.cs" />
+    <Compile Include="MetaDataTypes\PublisherData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategy\CompositeStrategyVarInfo.cs" />
+    <Compile Include="Strategy\CompositeSwitch.cs" />
+    <Compile Include="Strategy\IStrategy.cs" />
+    <Compile Include="Strategy\IStrategyExtensionMethods.cs" />
+    <Compile Include="Strategy\ModellingOptions.cs" />
+    <Compile Include="Strategy\ModellingOptionsManager.cs" />
+    <Compile Include="Strategy\PropertyDescription.cs" />
+    <Compile Include="Strategy\PropertyDescriptionComparer.cs" />
+    <Compile Include="Strategy\Switch.cs" />
+    <Compile Include="Strategy\VarInfoNameComparer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MLLicense.resx">
+      <DependentUpon>MLLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_EC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FP7_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MODEXTREME_main.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MODEXTREME_main_logo_only.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Attribution_no-commercial_share_alike_88x31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO CREA NOSCRITTE 4.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
